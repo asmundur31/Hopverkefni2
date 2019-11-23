@@ -20,9 +20,11 @@
   &__subtitle {
     z-index: 1;
     text-transform: uppercase;
+    font-family: $font-title;
   }
 
   &__title {
     z-index: 1;
+    font-family: $font-title;
   }
 }
