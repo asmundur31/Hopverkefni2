@@ -1,6 +1,8 @@
 @import "config";
 
 .lectures {
+  max-width: $max-width;
+
   &__row {
     display: flex;
     margin: 0 -$gutter/2;
@@ -10,23 +12,38 @@
 
   &__col {
     width: 100%;
-    padding: 0 3*$gutter/2 2*$gutter 3*$gutter/2;
+    padding: 0 $gutter/2 2*$gutter $gutter/2;
+  }
+
+  @media (min-width: 700px) {
+    &__col {
+      width: 50%;
+    }
+  }
+  @media (min-width: 1000px) {
+    &__col {
+      width: calc(100%/3);
+    }
   }
 }
 
 .lecture {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+
   &__img {
     width: 100%;
-    height: auto;
-    margin-bottom: -5px;
+    height: 100%;
+    background-color: $ljosGrar;
   }
 
   &__header {
     display: flex;
     flex-direction: row;
+    align-items: flex-end;
     background-color: $ljosGrar;
     font-family: $font-title;
-    align-items: center;
   }
 
   &__text {
@@ -52,5 +69,6 @@
     font-size: 48px;
     padding: $gutter/2;
     color: $ljosGraenn;
+    margin: auto 0;
   }
 }
