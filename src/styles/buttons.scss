@@ -4,7 +4,7 @@
   display: flex;
   flex-direction: row;
   justify-content: center;
-  padding: $gutter 0;
+  padding: 2*$gutter 0;
 }
 
 .button--fyrirlestrar {
@@ -14,4 +14,7 @@
   background-color: $ljosGrar;
   border-radius: 10px;
   box-shadow: 2px 1px $dokkGrar;
+  font-size: 24px;
+  font-family: $font-title;
+  font-weight: 700;
 }

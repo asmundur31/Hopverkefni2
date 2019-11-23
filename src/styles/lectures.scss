@@ -1,0 +1,56 @@
+@import "config";
+
+.lectures {
+  &__row {
+    display: flex;
+    margin: 0 -$gutter/2;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+
+  &__col {
+    width: 100%;
+    padding: 0 3*$gutter/2 2*$gutter 3*$gutter/2;
+  }
+}
+
+.lecture {
+  &__img {
+    width: 100%;
+    height: auto;
+    margin-bottom: -5px;
+  }
+
+  &__header {
+    display: flex;
+    flex-direction: row;
+    background-color: $ljosGrar;
+    font-family: $font-title;
+    align-items: center;
+  }
+
+  &__text {
+    width: 100%;
+
+    &__category {
+      text-transform: uppercase;
+      padding: $gutter/2 $gutter/2 0 $gutter/2;
+    }
+  
+    &__title {
+      font-size: 32px;
+      padding: $gutter/2;
+      font-weight: 700;
+    }
+  }
+
+  &__checked {
+    visibility: hidden;
+  }
+
+  &__checked--done {
+    font-size: 48px;
+    padding: $gutter/2;
+    color: $ljosGraenn;
+  }
+}
