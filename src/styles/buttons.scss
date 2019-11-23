@@ -7,10 +7,10 @@
 }
 
 .button--fyrirlestrar {
+  width: fit-content;
+  padding: $gutter/2;
+  margin: 0 $gutter;
   background-color: $ljosGrar;
   border-radius: 10px;
   box-shadow: 2px 1px $dokkGrar;
-  margin: 0 $gutter;
-  padding: $gutter/2;
-  width: fit-content;
 }
