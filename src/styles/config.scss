@@ -1,2 +1,20 @@
 $max-width: 1200px;
 $gutter: 20px;
+$svartur: #000;
+$grar: #999;
+$dokkGrar: #aaa;
+$ljosGrar: #ccc;
+$ljosGraenn: #2d2;
+$dokkGraenn: #1a1;
+$gulur: #fcffd2;
+$bleikur: #cc9694;
+
+.protection {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 1;
+  background-color: rgba(255, 255, 255, 0.4);
+}
