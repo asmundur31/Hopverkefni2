@@ -33,6 +33,8 @@
   height: 100%;
 
   &:hover {
+    cursor: pointer;
+    
     .lecture__img {
       background-color: $grar;
     }
@@ -47,6 +49,7 @@
     height: 100%;
     margin-bottom: -2px;
     background-color: $ljosGrar;
+    transition: 0.3s ease-in-out;
   }
 
   &__header {
@@ -55,6 +58,7 @@
     align-items: flex-end;
     background-color: $ljosGrar;
     font-family: $font-title;
+    transition: 0.3s ease-in-out;
   }
 
   &__text {
