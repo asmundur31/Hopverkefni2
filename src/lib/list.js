@@ -1,4 +1,4 @@
-import empty, {getLectures, createListElement} from './helpers';
+import empty, { getLectures, createListElement } from './helpers';
 import { loadLecture } from './display-lecture';
 
 
@@ -19,10 +19,10 @@ export default class List {
     getLectures().then((data) => {
       const lectures = data.lectures;
       //Leitum yfir öll lecture element og birtum þau sem beðið er um
-      for (var i = 0; i < lectures.length; i += 1) {
+      for (let i = 0; i < lectures.length; i += 1) {
         if (lectures[i].category === type || !type) {
           const lecture = createListElement(lectures[i].thumbnail, lectures[i].title, lectures[i].category);
-          lecture.addEventListener('click', loadLecture);
+          lecture.addEventListener('click', function(){loadLecture(i);});
           this.container.appendChild(lecture);
         }
       }

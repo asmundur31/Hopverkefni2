@@ -4,7 +4,7 @@ import { getLectures } from './helpers';
  *
  * @param {int} i
  */
-function loadLecture(i) {
+export function loadLecture(i) {
   debugger;
   console.log(i);
   const data = getLectures() || [];
