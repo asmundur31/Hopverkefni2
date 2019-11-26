@@ -1,5 +1,6 @@
 import List from './lib/list';
 import loadLecture from './lib/display-lecture';
+import init from './lib/display-list';
 
 document.addEventListener('DOMContentLoaded', () => {
   const page = document.querySelector('body');
@@ -8,7 +9,6 @@ document.addEventListener('DOMContentLoaded', () => {
   if (isLecturePage) {
     loadLecture();
   } else {
-    const list = new List();
-    list.load();
+    init(page);
   }
 });
