@@ -6,39 +6,39 @@ import { el } from './helpers';
  */
 function createElement(content) {
   let element;
-  if (content['type'] === 'youtube') {
+  if (content.type === 'youtube') {
     element = el('iframe', 'video');
-    element.src = content['data'];
+    element.src = content.data;
     element.setAttribute('width', '100%');
     element.setAttribute('height', '100%');
-  } else if (content['type'] === 'text') {
+  } else if (content.type === 'text') {
     element = el('p', 'text');
-    element.innerHTML = content['data'];
-  } else if (content['type'] === 'quote') {
+    element.innerHTML = content.data;
+  } else if (content.type === 'quote') {
     element = el('div', 'quote', el('blockquote', 'quote__data'), el('p', 'quote__attribute'));
-    element.querySelector('.quote__data').innerHTML = content['data'];
-    if (content['attribute']) {
-      element.querySelector('.quote__attribute').innerHTML = content['attribute'];
+    element.querySelector('.quote__data').innerHTML = content.data;
+    if (content.attribute) {
+      element.querySelector('.quote__attribute').innerHTML = content.attribute;
     }
-  } else if (content['type'] === 'image') {
+  } else if (content.type === 'image') {
     element = el('div', 'image', el('img', 'image__img'), el('p', 'image__caption'));
-    element.querySelector('.image__img').src = content['data'];
-    if (content['caption']) {
-      element.querySelector('.image__caption').innerHTML = content['caption'];
+    element.querySelector('.image__img').src = content.data;
+    if (content.caption) {
+      element.querySelector('.image__caption').innerHTML = content.caption;
     }
-  } else if (content['type'] === 'heading') {
+  } else if (content.type === 'heading') {
     element = el('h2', 'haus');
-    element.innerHTML = content['data'];
-  } else if (content['type'] === 'list') {
+    element.innerHTML = content.data;
+  } else if (content.type === 'list') {
     element = el('ul', 'list');
-    for (let i = 0; i < content['data'].length; i += 1) {
+    for (let i = 0; i < content.data.length; i += 1) {
       const e = el('li', 'list__tag');
-      e.innerHTML = content['data'][i];
+      e.innerHTML = content.data[i];
       element.appendChild(e);
     }
-  } else if (content['type'] === 'code') {
+  } else if (content.type === 'code') {
     element = el('code', 'code');
-    element.innerHTML = content['data'];
+    element.innerHTML = content.data;
   }
   const col = el('div', 'content__col');
   col.appendChild(element);

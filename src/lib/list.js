@@ -13,10 +13,10 @@ export default class List {
    */
   load(types) {
     empty(this.container);
-    //Listi yfir öll lecture elements
+    // Listi yfir öll lecture elements
     getLectures().then((data) => {
-      const lectures = data.lectures;
-      //Leitum yfir öll lecture element og birtum þau sem beðið er um
+      const { lectures } = data;
+      // Leitum yfir öll lecture element og birtum þau sem beðið er um
       for (let i = 0; i < lectures.length; i += 1) {
         if (!(Array.isArray(types)) || types.length === 0 || types.includes(lectures[i].category)) {
           const lecture = createListElement(
@@ -26,6 +26,5 @@ export default class List {
         }
       }
     }).catch(() => {});
-
   }
 }

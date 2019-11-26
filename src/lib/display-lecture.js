@@ -1,4 +1,4 @@
-import empty, { el, getLectures } from './helpers';
+import empty, { getLectures } from './helpers';
 import createLecture from './lecture';
 
 export default function loadLecture() {
