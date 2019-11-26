@@ -13,6 +13,8 @@
   &__col {
     width: 100%;
     padding: 0 $gutter/2 2*$gutter $gutter/2;
+    text-decoration: none;
+    color: #000;
   }
 
   @media (min-width: 700px) {
