@@ -22,7 +22,7 @@ export default class List {
       for (var i = 0; i < lectures.length; i += 1) {
         if (lectures[i].category === type || !type) {
           const lecture = createListElement(lectures[i].thumbnail, lectures[i].title, lectures[i].category);
-          lecture.addEventListener('click', loadLecture(i));
+          lecture.addEventListener('click', loadLecture);
           this.container.appendChild(lecture);
         }
       }
