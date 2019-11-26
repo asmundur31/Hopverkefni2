@@ -9,18 +9,18 @@ export default class List {
 
   /**
    *
-   * @param {string} type
-   * Birtir lectures af flokknum type.
+   * @param {Array} types
+   * Birtir lectures af flokkum í type.
    * Ef type er empty loadast allir lectures.
    */
-  load(type) {
+  load(types) {
     empty(this.container);
     //Listi yfir öll lecture elements
     getLectures().then((data) => {
       const lectures = data.lectures;
       //Leitum yfir öll lecture element og birtum þau sem beðið er um
       for (let i = 0; i < lectures.length; i += 1) {
-        if (lectures[i].category === type || !type) {
+        if (!(Array.isArray(types)) || types.length === 0 || types.includes(lectures[i].category) ) {
           const lecture = createListElement(
             lectures[i].thumbnail, lectures[i].title, lectures[i].category, lectures[i].slug,
           );
