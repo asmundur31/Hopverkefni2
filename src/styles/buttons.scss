@@ -2,21 +2,21 @@
 
 .buttons {
   display: flex;
+  padding: 2*$gutter 0;
   flex-direction: row;
   justify-content: center;
-  padding: 2*$gutter 0;
 }
 
 .button--fyrirlestrar {
   width: fit-content;
   padding: $gutter/2;
   margin: 0 $gutter;
+  font-family: $font-title;
+  font-size: 24px;
+  font-weight: 700;
   background-color: $ljosGrar;
   border-radius: 10px;
   box-shadow: 2px 1px $dokkGrar;
-  font-size: 24px;
-  font-family: $font-title;
-  font-weight: 700;
   transition: 0.3s ease-in-out;
 
   &--active {

@@ -20,17 +20,17 @@
 
   &__subtitle {
     z-index: 1;
-    text-transform: uppercase;
-    font-family: $font-title;
     padding: $gutter/2;
+    font-family: $font-title;
+    text-transform: uppercase;
   }
 
   &__title {
     z-index: 1;
+    padding: $gutter/2;
     font-family: $font-title;
     font-size: 48px;
     text-align: center;
-    padding: $gutter/2;
   }
 }
 

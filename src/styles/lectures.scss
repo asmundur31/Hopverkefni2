@@ -13,8 +13,8 @@
   &__col {
     width: 100%;
     padding: 0 $gutter/2 2*$gutter $gutter/2;
-    text-decoration: none;
     color: #000;
+    text-decoration: none;
   }
 
   @media (min-width: 700px) {
@@ -24,19 +24,19 @@
   }
   @media (min-width: 1000px) {
     &__col {
-      width: calc(100%/3);
+      width: calc(100% / 3);
     }
   }
 }
 
 .lecture {
   display: flex;
-  flex-direction: column;
   height: 100%;
+  flex-direction: column;
 
   &:hover {
     cursor: pointer;
-    
+
     .lecture__img {
       background-color: $grar;
     }
@@ -56,10 +56,10 @@
 
   &__header {
     display: flex;
+    font-family: $font-title;
     flex-direction: row;
     align-items: flex-end;
     background-color: $ljosGrar;
-    font-family: $font-title;
     transition: 0.3s ease-in-out;
   }
 
@@ -67,13 +67,13 @@
     width: 100%;
 
     &__category {
-      text-transform: uppercase;
       padding: $gutter/2 $gutter/2 0 $gutter/2;
+      text-transform: uppercase;
     }
-  
+
     &__title {
-      font-size: 32px;
       padding: $gutter/2;
+      font-size: 32px;
       font-weight: 700;
     }
   }
@@ -83,9 +83,9 @@
   }
 
   &__checked--done {
-    font-size: 48px;
     padding: $gutter/2;
-    color: $ljosGraenn;
     margin: auto 0;
+    font-size: 48px;
+    color: $ljosGraenn;
   }
 }
