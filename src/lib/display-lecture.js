@@ -15,11 +15,11 @@ export default function loadLecture() {
         break;
       }
     }
-    const efni = data[index];
+    const fyrirlestur = data[index];
     // setja allt inn úr þeim fyrirlestri
     const main = document.querySelector('.main');
     empty(main);
-    const d = createLecture(efni);
+    const d = createLecture(fyrirlestur);
     main.appendChild(d);
   }).catch(() => {});
 }
