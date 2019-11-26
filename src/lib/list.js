@@ -1,6 +1,4 @@
 import empty, { getLectures, createListElement } from './helpers';
-import loadLecture from './display-lecture';
-
 
 export default class List {
   constructor() {
@@ -24,7 +22,6 @@ export default class List {
           const lecture = createListElement(
             lectures[i].thumbnail, lectures[i].title, lectures[i].category, lectures[i].slug,
           );
-          lecture.addEventListener('click', function() {loadLecture(i);});
           this.container.appendChild(lecture);
         }
       }

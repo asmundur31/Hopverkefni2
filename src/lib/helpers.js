@@ -18,7 +18,6 @@ export function el(name, className, ...children) {
       }
     });
   }
-
   return element;
 }
 

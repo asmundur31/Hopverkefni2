@@ -1,11 +1,25 @@
-import { getLectures } from './helpers';
+import empty, { el, getLectures } from './helpers';
+import createLecture from './lecture';
 
-/**
- *
- * @param {int} i
- */
-export default function loadLecture(i) {
-  console.log(i);
-  const data = getLectures() || [];
-  const lecture = data[i];
+export default function loadLecture() {
+  getLectures().then((lectures) => {
+    const data = lectures.lectures;
+    // sækjum hvaða fyrirlestur var ýtt á
+    const url = new URLSearchParams(window.location.search);
+    const slug = url.get('slug');
+    let index = 0;
+    // leitum af fyrirlestri í lectures.json
+    for (let i = 0; i < data.length; i += 1) {
+      if (data[i].slug === slug) {
+        index = i;
+        break;
+      }
+    }
+    const efni = data[index];
+    // setja allt inn úr þeim fyrirlestri
+    const main = document.querySelector('.main');
+    empty(main);
+    const d = createLecture(efni);
+    main.appendChild(d);
+  }).catch(() => {});
 }
