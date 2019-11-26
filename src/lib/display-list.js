@@ -10,7 +10,7 @@ export default function init(pageParam) {
     page = pageParam;
     const buttons = page.querySelectorAll('.button--fyrirlestrar');
     for(var i = 0; i < buttons.length; i += 1) {
-        buttons[i].addEventListener('click', toggleList);
+        buttons[i].addEventListener('click', toggleList, false);
     }
 }
 
@@ -26,14 +26,7 @@ function toggleList(e) {
     } else {
         button.classList.add('button--fyrirlestrar--active');
         display.push(category);
-        if(display.length === 3) {
-            const buttons = page.querySelectorAll('.button--fyrirlestrar');
-            for(var i = 0; i < buttons.length; i += 1) {
-                buttons[i].classList.remove('button--fyrirlestrar--active');
-            }
-            display = Array();
-        }
         list.load(display);
     }
-    
+
 }
