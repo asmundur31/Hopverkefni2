@@ -21,8 +21,10 @@ export default class List {
       //Leitum yfir öll lecture element og birtum þau sem beðið er um
       for (let i = 0; i < lectures.length; i += 1) {
         if (lectures[i].category === type || !type) {
-          const lecture = createListElement(lectures[i].thumbnail, lectures[i].title, lectures[i].category);
-          lecture.addEventListener('click', function(){loadLecture(i);});
+          const lecture = createListElement(
+            lectures[i].thumbnail, lectures[i].title, lectures[i].category, lectures[i].slug,
+          );
+          lecture.addEventListener('click', function() {loadLecture(i);});
           this.container.appendChild(lecture);
         }
       }
