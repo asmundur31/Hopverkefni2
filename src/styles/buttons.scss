@@ -27,4 +27,8 @@
     cursor: pointer;
     background-color: $grar;
   }
+
+  &--active:hover {
+    background-color: $dokkGraenn;
+  }
 }
