@@ -1,4 +1,3 @@
-import List from './lib/list';
 import loadLecture from './lib/display-lecture';
 import init from './lib/display-list';
 

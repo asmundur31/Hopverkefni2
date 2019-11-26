@@ -1,7 +1,3 @@
-function setHeader(img) {
-  
-}
-
 export default function createLecture(efni) {
   const haus = document.querySelector('.header');
   if (efni.image) {

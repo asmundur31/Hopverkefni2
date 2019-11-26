@@ -18,7 +18,7 @@ export default class List {
       const lectures = data.lectures;
       //Leitum yfir öll lecture element og birtum þau sem beðið er um
       for (let i = 0; i < lectures.length; i += 1) {
-        if (!(Array.isArray(types)) || types.length === 0 || types.includes(lectures[i].category) ) {
+        if (!(Array.isArray(types)) || types.length === 0 || types.includes(lectures[i].category)) {
           const lecture = createListElement(
             lectures[i].thumbnail, lectures[i].title, lectures[i].category, lectures[i].slug,
           );
