@@ -1,6 +1,7 @@
 import empty, {getLectures, createListElement} from './helpers';
 import { loadLecture } from './display-lecture';
 
+
 export default class List {
   constructor() {
     this.container = document.querySelector('.list');
