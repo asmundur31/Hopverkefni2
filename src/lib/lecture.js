@@ -9,11 +9,24 @@ function createElement(content) {
   if (content.type === 'youtube') {
     element = el('iframe', 'video');
     element.src = content.data;
-    element.setAttribute('width', '100%');
-    element.setAttribute('height', '100%');
+    element.setAttribute('framborder', '0');
+    element.setAttribute('allowfullscreen', '0');
   } else if (content.type === 'text') {
-    element = el('p', 'text');
-    element.innerHTML = content.data;
+    element = el('div', 'text');
+    let index = 0;
+    let before = 0;
+    while (index < content.data.length) {
+      if (content.data[index] === '\n') {
+        const p = el('p', 'text__p');
+        p.innerHTML = content.data.slice(before, index);
+        element.appendChild(p);
+        before = index + 1;
+      }
+      index += 1;
+    }
+    const p = el('p', 'text__p');
+    p.innerHTML = content.data.slice(before, index);
+    element.appendChild(p);
   } else if (content.type === 'quote') {
     element = el('div', 'quote', el('blockquote', 'quote__data'), el('p', 'quote__attribute'));
     element.querySelector('.quote__data').innerHTML = content.data;
@@ -30,9 +43,9 @@ function createElement(content) {
     element = el('h2', 'haus');
     element.innerHTML = content.data;
   } else if (content.type === 'list') {
-    element = el('ul', 'list');
+    element = el('ul', 'tags');
     for (let i = 0; i < content.data.length; i += 1) {
-      const e = el('li', 'list__tag');
+      const e = el('li', 'tags__tag');
       e.innerHTML = content.data[i];
       element.appendChild(e);
     }

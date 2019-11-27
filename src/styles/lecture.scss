@@ -1,0 +1,64 @@
+@import "config";
+
+.content {
+  max-width: $max-width;
+
+  &__row {
+    display: flex;
+    margin: $gutter (-$gutter / 2);
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+
+  &__col {
+    width: 100%;
+    padding: 0 $gutter/2;
+    margin: $gutter 0;
+
+    @media (min-width: 700px) {
+      width: calc(5 * 100% / 6);
+      margin-left: calc(100% / 12);
+    }
+
+    @media (min-width: 1000px) {
+      width: calc(2 * 100% / 3);
+      margin-left: calc(100% / 6);
+    }
+  }
+}
+
+.video {
+  width: 100%;
+  height: 500px;
+}
+
+.text {
+  margin-bottom: -$gutter;
+
+  &__p {
+    margin-bottom: $gutter;
+  }
+}
+
+.quote {
+  padding: $gutter;
+  margin: 0 (-$gutter);
+  background-color: $ljosGrar;
+
+  &__attribute {
+    padding-top: $gutter/2;
+  }
+}
+
+.haus {
+  margin-bottom: -$gutter;
+  font-family: $font-title;
+}
+
+.tags {
+  margin-bottom: -$gutter;
+
+  &__tag {
+    margin-bottom: $gutter;
+  }
+}
