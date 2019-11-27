@@ -1,4 +1,5 @@
-import { el } from './helpers';
+import empty, { el } from './helpers';
+import save, { isDone, remove } from './storage';
 
 /**
  *
@@ -78,6 +79,35 @@ export default function createLecture(fyrirlestur) {
     const e = createElement(efni[i]);
     row.appendChild(e);
   }
+  const finishedButton = document.querySelector('.footer__button');
+  if(isDone(fyrirlestur.slug)) {
+    finishedButton.classList.add('footer__button--done');
+    empty(finishedButton);
+    finishedButton.appendChild(document.createTextNode('✓ Fyrirlestur kláraður'));
+  }
+  finishedButton.addEventListener('click', function() {
+    finishLecture(fyrirlestur.slug, finishedButton);
+  });
   const content = el('div', 'content', row);
   return content;
+}
+
+/**
+ * 
+ * @param {string} slug 
+ * @param {element} button 
+ * Klárar fyrirlestur ef hann er ekki kláraður en afklárar fyrirlestur ef hann er kláraður
+ */
+function finishLecture(slug, button) {
+  if(isDone(slug)) {
+    button.classList.remove('footer__button--done');
+    empty(button);
+    button.appendChild(document.createTextNode('Klára fyrirlestur'));
+    remove(slug);
+  } else {
+    button.classList.add('footer__button--done');
+    empty(button);
+    button.appendChild(document.createTextNode('✓ Fyrirlestur kláraður'));
+    save(slug);
+  }
 }

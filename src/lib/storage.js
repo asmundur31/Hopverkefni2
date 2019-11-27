@@ -45,6 +45,20 @@ export default function save(slug) {
   }
 }
 
+/**
+ * 
+ * @param {string} slug Hreinsar slug úr local storage 
+ */
+export function remove(slug) {
+    const slugs = JSON.parse(window.localStorage.getItem(LOCALSTORAGE_KEY));
+    for(var i = 0; i  < slugs.length; i += 1) {
+        if(slugs[i].slug === slug) {
+            const index = slugs.indexOf(slug);
+            slugs.splice(index, 1);
+        }
+    }
+    window.localStorage.setItem(LOCALSTORAGE_KEY, JSON.stringify(slugs));
+}
 
 /**
  * Hreinsar öll slugs úr localStorage
