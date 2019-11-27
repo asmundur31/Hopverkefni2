@@ -1,7 +1,7 @@
 import List from './list';
 
 let page;
-const display = Array();
+const display = [];
 let list;
 
 function toggleList(e) {

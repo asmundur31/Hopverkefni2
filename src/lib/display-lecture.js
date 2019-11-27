@@ -21,5 +21,5 @@ export default function loadLecture() {
     empty(main);
     const d = createLecture(fyrirlestur);
     main.appendChild(d);
-  }).catch(() => {});
+  }).catch((e) => { console.log(e); });
 }

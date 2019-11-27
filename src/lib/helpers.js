@@ -1,4 +1,4 @@
-import {isDone} from './storage';
+import { isDone } from './storage';
 
 export default function empty(element) {
   while (element.firstChild) {
@@ -54,7 +54,7 @@ export function createListElement(img, title, category, slug) {
   titleEl.appendChild(document.createTextNode(title));
   const doneEl = listEl.querySelector('.lecture__checked');
   doneEl.appendChild(document.createTextNode('✓'));
-  if(isDone(slug)) {
+  if (isDone(slug)) {
     doneEl.classList.remove('lecture__checked');
     doneEl.classList.add('lecture__checked--done');
   }

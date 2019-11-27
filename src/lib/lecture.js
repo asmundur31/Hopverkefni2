@@ -2,7 +2,7 @@ import { el } from './helpers';
 
 /**
  *
- * @param {Array} content
+ * @param {Set} content
  */
 function createElement(content) {
   let element;
@@ -18,40 +18,40 @@ function createElement(content) {
     while (index < content.data.length) {
       if (content.data[index] === '\n') {
         const p = el('p', 'text__p');
-        p.innerHTML = content.data.slice(before, index);
+        p.appendChild(document.createTextNode(content.data.slice(before, index)));
         element.appendChild(p);
         before = index + 1;
       }
       index += 1;
     }
     const p = el('p', 'text__p');
-    p.innerHTML = content.data.slice(before, index);
+    p.appendChild(document.createTextNode(content.data.slice(before, index)));
     element.appendChild(p);
   } else if (content.type === 'quote') {
     element = el('div', 'quote', el('blockquote', 'quote__data'), el('p', 'quote__attribute'));
-    element.querySelector('.quote__data').innerHTML = content.data;
+    element.querySelector('.quote__data').appendChild(document.createTextNode(content.data));
     if (content.attribute) {
-      element.querySelector('.quote__attribute').innerHTML = content.attribute;
+      element.querySelector('.quote__attribute').appendChild(document.createTextNode(content.attribute));
     }
   } else if (content.type === 'image') {
     element = el('div', 'image', el('img', 'image__img'), el('p', 'image__caption'));
     element.querySelector('.image__img').src = content.data;
     if (content.caption) {
-      element.querySelector('.image__caption').innerHTML = content.caption;
+      element.querySelector('.image__caption').appendChild(document.createTextNode(content.caption));
     }
   } else if (content.type === 'heading') {
     element = el('h2', 'haus');
-    element.innerHTML = content.data;
+    element.appendChild(document.createTextNode(content.data));
   } else if (content.type === 'list') {
     element = el('ul', 'tags');
     for (let i = 0; i < content.data.length; i += 1) {
       const e = el('li', 'tags__tag');
-      e.innerHTML = content.data[i];
+      e.appendChild(document.createTextNode(content.data[i]));
       element.appendChild(e);
     }
   } else if (content.type === 'code') {
     element = el('code', 'code');
-    element.innerHTML = content.data;
+    element.appendChild(document.createTextNode(content.data));
   }
   const col = el('div', 'content__col');
   col.appendChild(element);
@@ -77,5 +77,5 @@ export default function createLecture(fyrirlestur) {
     row.appendChild(e);
   }
   const content = el('div', 'content', row);
-  document.querySelector('.main').appendChild(content);
+  return content;
 }
