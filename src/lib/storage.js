@@ -53,7 +53,8 @@ export function remove(slug) {
   const slugs = JSON.parse(window.localStorage.getItem(LOCALSTORAGE_KEY));
   for (let i = 0; i < slugs.length; i += 1) {
     if (slugs[i].slug === slug) {
-      slugs.splice(i, 1);
+      const index = slugs.indexOf(slugs[i]);
+      slugs.splice(index, 1);
     }
   }
   window.localStorage.setItem(LOCALSTORAGE_KEY, JSON.stringify(slugs));
