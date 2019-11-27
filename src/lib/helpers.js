@@ -1,3 +1,5 @@
+import isDone from './storage';
+
 export default function empty(element) {
   while (element.firstChild) {
     element.removeChild(element.firstChild);
@@ -50,5 +52,11 @@ export function createListElement(img, title, category, slug) {
   catEl.appendChild(document.createTextNode(category));
   const titleEl = listEl.querySelector('.lecture__text__title');
   titleEl.appendChild(document.createTextNode(title));
+  const doneEl = doneEl.querySelector('.lecture__checked');
+  doneEl.appendChild(document.createTextNode('✓'));
+  if(isDone(slug)) {
+    doneEl.classList.remove('lecture__checked');
+    doneEl.classList.add('lecture__checked--done');
+  }
   return listEl;
 }
