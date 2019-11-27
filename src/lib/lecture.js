@@ -28,10 +28,12 @@ function createElement(content) {
     p.appendChild(document.createTextNode(content.data.slice(before, index)));
     element.appendChild(p);
   } else if (content.type === 'quote') {
-    element = el('div', 'quote', el('blockquote', 'quote__data'), el('p', 'quote__attribute'));
+    element = el('div', 'quote', el('blockquote', 'quote__data'));
     element.querySelector('.quote__data').appendChild(document.createTextNode(content.data));
     if (content.attribute) {
-      element.querySelector('.quote__attribute').appendChild(document.createTextNode(content.attribute));
+      const attr = el('cite', 'quote__attribute');
+      attr.appendChild(document.createTextNode(content.attribute));
+      element.querySelector('.quote__data').appendChild(attr);
     }
   } else if (content.type === 'image') {
     element = el('div', 'image', el('img', 'image__img'), el('p', 'image__caption'));
@@ -50,7 +52,7 @@ function createElement(content) {
       element.appendChild(e);
     }
   } else if (content.type === 'code') {
-    element = el('code', 'code');
+    element = el('div', 'code');
     element.appendChild(document.createTextNode(content.data));
   }
   const col = el('div', 'content__col');

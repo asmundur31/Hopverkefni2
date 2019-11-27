@@ -45,6 +45,11 @@
   margin: 0 (-$gutter);
   background-color: $ljosGrar;
 
+  &__data {
+    display: flex;
+    flex-direction: column;
+  }
+
   &__attribute {
     padding-top: $gutter/2;
   }
@@ -65,4 +70,5 @@
 
 .code {
   font-family: monospace;
+  white-space: pre-wrap;
 }
