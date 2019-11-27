@@ -16,16 +16,15 @@ const LOCALSTORAGE_KEY = 'finished_lectures';
  */
 export function isDone(slug) {
   const slugs = JSON.parse(window.localStorage.getItem(LOCALSTORAGE_KEY));
-  if(slugs.includes(slug)) return true;
+  if(slugs !== null && slugs.includes(slug)) return true;
   return false;
 }
 
 /**
- * Vistaðar myndir með texta.
- *
+ * 
  * @param {string} slug vistar slug gildi á kláruðum fyrirlestri
  */
-export function save(slug) {
+export default function save(slug) {
   let listi;
   if (window.localStorage.getItem(LOCALSTORAGE_KEY)) {
     listi = JSON.parse(window.localStorage.getItem(LOCALSTORAGE_KEY));
