@@ -1,4 +1,87 @@
+# Lýsing á verkefni
+## Uppsetning á verkefni
+Til að keyra verkefnið þá þarf að sækja þetta repository og framkvæma eftirfarandi skipanir í terminal eða í command line í möppu verkefnisins:
+
+```sh
+npm install
+npm run dev
+```
+Þá eru sóttir allir pakkar sem þarf til að keyra verkefnið og svo er verkefnið keyrt með því að keyra nokkrar skipanir samhliða. Þessar skipanir eru:
+
+* npm run sass-watch
+
+Þessi skipun tekur eftir því þegar einhver **.scss** skrá er vistuð.
+
+* npm run sass
+
+Þessi skipun þýðir **styles.scss** skránna yfir í **styles.css** skrá.
+
+* npm run browser-sync
+
+Þessi skipun fylgist með því þegar einhver skrá er vistuð að þá verður "browser"-inn sem við erum að nota "refresh"-aður.
+
+## Aðrir pakkar sem notaðir voru í verkefni
+Við notuðm stylelint til þess að passa að allur **scss** kóði líti svipað út hjá okkur öllum. Til þess að athuga hvort skránnar okkar séu að fylgja settum reglum, þá er eftirfarandi skipun keyrð:
+* npm run lint-scss
+
+## Skipulag verkefnis
+### Uppbygging
+Verkefnið er sett upp á 2 html síðum:
+* index.html (Forsíða)
+* fyrirlestur.html
+
+#### index.html
+Inniheldur lista af öllum fyrirlestrum auka 3ja takka sem sía hvaða fyrirlestrar eru birtir í listanum
+#### fyrirlestur.html
+Birtir efni þess fyrirlesturs sem valinn var á forsíðunni
+### Útlit
+Allt útlit á verkefninu er í **styles.css** sem var þýtt úr **styles.scss** skránni. Í **styles.scss** skránni eru aðeins grunn útlit og svo eru "import"-aðar aðrar **.scss** skrár. Við reyndum að átta okkur á einungunum sem voru notaðar á öllum síðunum og reyndum að láta hverja einingu fá sína **.scss** skrá. Eftirfarandi **scss** skrár eru "import"-aðar í **styles.scss**:
+* buttons.scss
+* config.scss
+* fonts.scss
+* footer.scss
+* header.scss
+* lecture.scss
+* lectures.scss
+* main.scss
+* styles.scss
+
+#### buttons
+#### config
+#### fonts
+#### footer
+#### header
+#### lecture
+#### lectures
+#### main
+#### styles
+
+### Virkni
+Öll virkni í verkefninu er í **bundle.js** sem var þýtt úr öllum .js skrám undir src möppunni. Inn í src er **index.js** og mappan lib sem innheldur allar aðrar .js skrár verkefnis. Við skiptum virkninni niðrí minni einingar sem eru útfærðar í viðeigandi .js skrám sem við gerum grein fyrir hér að neðan. 
+* index.js
+* display-lecture.js
+* display-list.js  
+* helpers.js
+* lecture.js
+* list.js
+* storage.js
+
+#### index
+#### display-lecture
+#### display-list  
+#### helpers
+#### lecture
+#### list
+#### storage
+
+## Upplýsingar um þá sem unnu verkefnið
+* Ásmundur Óskar Ásmundsson (aoa27@hi.is)
+* Ernir Vignisson (erv13@hi.is)
+* Sesar Hersisson (seh32@hi.is)
+
+## Hér endar lýsing á verkefni
 # Hópverkefni 2
+
 
 Verkefnið felst í því að smíða prótótýpu af fyrirlestravef fyrir vefforritun. Gefin eru gögn sem unnin eru uppúr námsefni vetrarins.
 
