@@ -27,7 +27,7 @@ export function el(name, className, ...children) {
  * @returns {Promise}
  */
 export async function getLectures() {
-  return fetch('../../lectures.json')
+  return fetch('./lectures.json')
     .then((response) => {
       if (response.ok) {
         return response.json();

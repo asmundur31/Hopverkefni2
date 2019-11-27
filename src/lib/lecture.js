@@ -79,8 +79,10 @@ export default function createLecture(fyrirlestur) {
     const e = createElement(efni[i]);
     row.appendChild(e);
   }
+  // meginmál klárt
+  // fótur
   const finishedButton = document.querySelector('.footer__button');
-  if(isDone(fyrirlestur.slug)) {
+  if (isDone(fyrirlestur.slug)) {
     finishedButton.classList.add('footer__button--done');
     empty(finishedButton);
     finishedButton.appendChild(document.createTextNode('✓ Fyrirlestur kláraður'));
@@ -93,13 +95,13 @@ export default function createLecture(fyrirlestur) {
 }
 
 /**
- * 
- * @param {string} slug 
- * @param {element} button 
+ *
+ * @param {string} slug
+ * @param {element} button
  * Klárar fyrirlestur ef hann er ekki kláraður en afklárar fyrirlestur ef hann er kláraður
  */
 function finishLecture(slug, button) {
-  if(isDone(slug)) {
+  if (isDone(slug)) {
     button.classList.remove('footer__button--done');
     empty(button);
     button.appendChild(document.createTextNode('Klára fyrirlestur'));
