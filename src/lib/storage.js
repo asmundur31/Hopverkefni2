@@ -16,7 +16,11 @@ const LOCALSTORAGE_KEY = 'finished_lectures';
  */
 export function isDone(slug) {
   const slugs = JSON.parse(window.localStorage.getItem(LOCALSTORAGE_KEY));
-  if(slugs !== null && slugs.includes(slug)) return true;
+  if(slugs !== null) {
+      for(var i = 0; i < slugs.length; i += 1) {
+          if(slugs[i].slug === slug) return true;
+      }
+  }
   return false;
 }
 
@@ -26,17 +30,19 @@ export function isDone(slug) {
  */
 export default function save(slug) {
   let listi;
-  if (window.localStorage.getItem(LOCALSTORAGE_KEY)) {
-    listi = JSON.parse(window.localStorage.getItem(LOCALSTORAGE_KEY));
-    listi.push({
-      slug
-    });
-  } else {
-    listi = Array({
-      slug
-    });
+  if(!isDone(slug)) {
+    if (window.localStorage.getItem(LOCALSTORAGE_KEY)) {
+        listi = JSON.parse(window.localStorage.getItem(LOCALSTORAGE_KEY));
+        listi.push({
+          slug
+        });
+      } else {
+        listi = Array({
+          slug
+        });
+      }
+      window.localStorage.setItem(LOCALSTORAGE_KEY, JSON.stringify(listi));
   }
-  window.localStorage.setItem(LOCALSTORAGE_KEY, JSON.stringify(listi));
 }
 
 

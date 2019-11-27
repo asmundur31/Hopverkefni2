@@ -1,4 +1,5 @@
 import empty, { getLectures, createListElement } from './helpers';
+import save, { clear } from './storage';
 
 export default class List {
   constructor() {
