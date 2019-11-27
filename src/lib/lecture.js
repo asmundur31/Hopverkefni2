@@ -43,7 +43,7 @@ function createElement(content) {
       element.querySelector('.image__caption').appendChild(document.createTextNode(content.caption));
     }
   } else if (content.type === 'heading') {
-    element = el('h2', 'haus');
+    element = el('h1', 'haus');
     element.appendChild(document.createTextNode(content.data));
   } else if (content.type === 'list') {
     element = el('ul', 'tags');
