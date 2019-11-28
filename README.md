@@ -86,16 +86,24 @@ Hér er grunnútlit og allar **.scss** skrár "import"-aðar til að allt útlit
 * storage.js
 
 #### index
+Keyrir þegar síðan er opnuð. Kallar á init fallið í **display-list**.
 #### display-lecture
 Hér er fall sem sækir fyrirlestur sem var smellt á og setur allt efnið á síðunna.
 #### display-list
-
+Hér er init fallið sem **index.js** kallar á. Það sér um að setja "event listeners" á síu-takkana á forsíðunni. Einnig er fall sem sér um að birta réttu fyrirlestrana í listanum eftir hvaða sía er gild með því að kalla á "load" fallið í **list.js**.
 #### helpers
+Hérna eru ýmiss föll sem notuðu er í mörgum öðrum .js skrám. Fall sem sem smíðar fyrirlestrahlut sem birtist í listanum. Fall sem sækir gögnin úr **lectures.json** með "AJAX" kalli.
 #### lecture
 Hér eru föll sem útbúa html fyrir efni á fyrirlestra síðunni.
 #### list
+Smíðar klasa sem sér um að birta rétta fyrirlestra í í listanum þegar kallað er á "load" fallið.
 #### storage
 Hér eru föll sem snúa að "local storage", eitt fall sér um að vista gögn, eitt sér um að eyða gögnum, eitt sér um að eyða ákveðnum gögnum og eitt sem athugar hvort ákveðin gögn eru til staðar í "local storage".
+### Gögn
+* lectures.json
+
+#### lectures
+Öll gögn um fyrirlestrana eru geymd í þessari skrá. Gögnin eru svo sótt með "AJAX" kalli.
 ## Upplýsingar um þá sem unnu verkefnið
 * Ásmundur Óskar Ásmundsson (aoa27@hi.is)
 * Ernir Vignisson (erv13@hi.is)
