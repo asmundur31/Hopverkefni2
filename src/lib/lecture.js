@@ -8,10 +8,12 @@ import save, { isDone, remove } from './storage';
 function createElement(content) {
   let element;
   if (content.type === 'youtube') {
-    element = el('iframe', 'video');
-    element.src = content.data;
-    element.setAttribute('framborder', '0');
-    element.setAttribute('allowfullscreen', '0');
+    element = el('div', 'videoWrapper');
+    const video = el('iframe', 'video');
+    video.src = content.data;
+    video.setAttribute('framborder', '0');
+    video.setAttribute('allowfullscreen', '0');
+    element.appendChild(video);
   } else if (content.type === 'text') {
     element = el('div', 'text');
     let index = 0;
