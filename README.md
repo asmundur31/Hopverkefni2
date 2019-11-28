@@ -30,11 +30,10 @@ Við notuðm "stylelint" til þess að passa að allur **scss** kóði líti svi
 
 Þessi skipun keyrir bæði:
 * npm run stylelint
-
-Þessi skipun athugar **scss** kóða.
 * npm run eslint
 
-Þessi skipun athugar **js** kóða.
+Fyrri skipunin athugar **scss** kóða.
+Seinni skipunin athugar **js** kóða.
 
 ## Skipulag verkefnis
 ### Uppbygging
