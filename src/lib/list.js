@@ -25,6 +25,6 @@ export default class List {
           this.container.appendChild(lecture);
         }
       }
-    }).catch((e) => { console.log(e); });
+    }).catch((e) => { throw new Error(e); });
   }
 }
