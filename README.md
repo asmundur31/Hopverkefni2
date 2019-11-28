@@ -25,8 +25,13 @@ npm run dev
 Þessi skipun fylgist með því þegar einhver skrá er vistuð að þá verður "browser"-inn sem við erum að nota "refresh"-aður.
 
 ## Aðrir pakkar sem notaðir voru í verkefni
-Við notuðm "stylelint" til þess að passa að allur **scss** kóði líti svipað út hjá okkur öllum. Til þess að athuga hvort skránnar okkar séu að fylgja settum reglum, þá er eftirfarandi skipun keyrð:
+Við notuðm "stylelint" til þess að passa að allur **scss** kóði líti svipað út hjá okkur öllum og "eslint" til þess að allur **js** kóði líti svipað út. Til þess að athuga hvort skránnar okkar séu að fylgja settum reglum, þá er eftirfarandi skipun keyrð:
+* npm run test
+Þessi skipun keyrir bæði:
 * npm run stylelint
+Þessi skipun athugar **scss** kóða.
+* npm run eslint
+Þessi skipun athugar **js** kóða.
 
 ## Skipulag verkefnis
 ### Uppbygging
