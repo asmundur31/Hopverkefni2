@@ -1,6 +1,6 @@
 # Lýsing á verkefni
 ## Uppsetning á verkefni
-Til að keyra verkefnið þá þarf að sækja þetta repository og framkvæma eftirfarandi skipanir í terminal eða í command line í möppu verkefnisins:
+Til að keyra verkefnið þá þarf að sækja þetta "repository" og framkvæma eftirfarandi skipanir í "terminal" eða í "command line" í möppu verkefnisins:
 
 ```sh
 npm install
@@ -10,19 +10,23 @@ npm run dev
 
 * npm run sass-watch
 
-Þessi skipun tekur eftir því þegar einhver **.scss** skrá er vistuð.
+Þessi skipun tekur eftir því þegar einhver **.scss** skrá er vistuð og uppfærir **styles.css** skránna.
 
 * npm run sass
 
 Þessi skipun þýðir **styles.scss** skránna yfir í **styles.css** skrá.
+
+* npm run rollup-watch
+
+Þessi skipun tekur eftir því þegar einhver **.js** skrá er vistuð og uppfærir **bundle.js** skránna. 
 
 * npm run browser-sync
 
 Þessi skipun fylgist með því þegar einhver skrá er vistuð að þá verður "browser"-inn sem við erum að nota "refresh"-aður.
 
 ## Aðrir pakkar sem notaðir voru í verkefni
-Við notuðm stylelint til þess að passa að allur **scss** kóði líti svipað út hjá okkur öllum. Til þess að athuga hvort skránnar okkar séu að fylgja settum reglum, þá er eftirfarandi skipun keyrð:
-* npm run lint-scss
+Við notuðm "stylelint" til þess að passa að allur **scss** kóði líti svipað út hjá okkur öllum. Til þess að athuga hvort skránnar okkar séu að fylgja settum reglum, þá er eftirfarandi skipun keyrð:
+* npm run stylelint
 
 ## Skipulag verkefnis
 ### Uppbygging
@@ -31,11 +35,11 @@ Verkefnið er sett upp á 2 html síðum:
 * fyrirlestur.html
 
 #### index.html
-Inniheldur lista af öllum fyrirlestrum auka 3ja takka sem sía hvaða fyrirlestrar eru birtir í listanum
+Inniheldur lista af öllum fyrirlestrum auka 3ja takka sem sía hvaða fyrirlestrar eru birtir í listanum.
 #### fyrirlestur.html
-Birtir efni þess fyrirlesturs sem valinn var á forsíðunni
+Birtir efni þess fyrirlesturs sem valinn var á forsíðunni.
 ### Útlit
-Allt útlit á verkefninu er í **styles.css** sem var þýtt úr **styles.scss** skránni. Í **styles.scss** skránni eru aðeins grunn útlit og svo eru "import"-aðar aðrar **.scss** skrár. Við reyndum að átta okkur á einungunum sem voru notaðar á öllum síðunum og reyndum að láta hverja einingu fá sína **.scss** skrá. Eftirfarandi **scss** skrár eru "import"-aðar í **styles.scss**:
+Allt útlit á verkefninu er í **styles.css** sem var þýtt úr **styles.scss** skránni. Í **styles.scss** skránni eru aðeins grunn útlit og svo eru "import"-aðar aðrar **.scss** skrár. Við reyndum að átta okkur á einungunum sem voru notaðar á síðunum og reyndum að láta hverja einingu fá sína **.scss** skrá. Eftirfarandi **scss** skrár eru "import"-aðar í **styles.scss**:
 * buttons.scss
 * config.scss
 * fonts.scss
@@ -47,17 +51,25 @@ Allt útlit á verkefninu er í **styles.css** sem var þýtt úr **styles.scss*
 * styles.scss
 
 #### buttons
+Hér er útlitið á tökkunum sem velja hvaða fyrirlestra sem við sjáum á forsíðunni.
 #### config
+Hér skilgreinum við alla fasta sem við notum í öllum skrám. Við "importum" þessari skrá efst í allar skrár.
 #### fonts
+Hér sækjum við letrið sem við notum.
 #### footer
+Hér er útlit á fæti á fyrirlestur síðunni, þ.e. á tökkunum þar.
 #### header
+Hér er útlit á haus bæði á forsíðunni og fyrirlestrasíðunni.
 #### lecture
+Hér er útlitið á fyrirlestrasíðunni, þ.e. útlit á efninu úr hverjum fyrirlestri.
 #### lectures
+Hér er útlit á fyrirlestrunum á forsíðunni.
 #### main
+Hér er passað uppá að efni í main verði ekki breiðari en hámarks breidd.
 #### styles
-
+Hér er grunnútlit og allar **.scss** skrár "import"-aðar til að allt útlit sé í einni skrá.
 ### Virkni
-Öll virkni í verkefninu er í **bundle.js** sem var þýtt úr öllum .js skrám undir src möppunni. Inn í src er **index.js** og mappan lib sem innheldur allar aðrar .js skrár verkefnis. Við skiptum virkninni niðrí minni einingar sem eru útfærðar í viðeigandi .js skrám sem við gerum grein fyrir hér að neðan. 
+Öll virkni í verkefninu er í **bundle.js** sem var þýtt úr öllum .js skrám undir "src" möppunni. Inn í "src" er **index.js** og mappan "lib" sem innheldur allar aðrar **.js** skrár verkefnis. Við skiptum virkninni niður í minni einingar sem eru útfærðar í viðeigandi **.js** skrám sem við gerum grein fyrir hér að neðan. 
 * index.js
 * display-lecture.js
 * display-list.js  
@@ -68,12 +80,15 @@ Allt útlit á verkefninu er í **styles.css** sem var þýtt úr **styles.scss*
 
 #### index
 #### display-lecture
-#### display-list  
+Hér er fall sem sækir fyrirlestur sem var smellt á og setur allt efnið á síðunna.
+#### display-list
+
 #### helpers
 #### lecture
+Hér eru föll sem útbúa html fyrir efni á fyrirlestra síðunni.
 #### list
 #### storage
-
+Hér eru föll sem snúa að "local storage", eitt fall sér um að vista gögn, eitt sér um að eyða gögnum, eitt sér um að eyða ákveðnum gögnum og eitt sem athugar hvort ákveðin gögn eru til staðar í "local storage".
 ## Upplýsingar um þá sem unnu verkefnið
 * Ásmundur Óskar Ásmundsson (aoa27@hi.is)
 * Ernir Vignisson (erv13@hi.is)
@@ -81,7 +96,6 @@ Allt útlit á verkefninu er í **styles.css** sem var þýtt úr **styles.scss*
 
 ## Hér endar lýsing á verkefni
 # Hópverkefni 2
-
 
 Verkefnið felst í því að smíða prótótýpu af fyrirlestravef fyrir vefforritun. Gefin eru gögn sem unnin eru uppúr námsefni vetrarins.
 
