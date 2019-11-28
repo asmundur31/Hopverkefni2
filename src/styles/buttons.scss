@@ -19,6 +19,11 @@
   box-shadow: 2px 1px $dokkGrar;
   transition: 0.3s ease-in-out;
 
+  @media (max-width: 440px) {
+    width: 70vw;
+    font-size: 16px;
+  }
+
   &--active {
     background-color: $ljosGraenn;
   }
